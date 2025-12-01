@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoPet | Cadastrar Animal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    </head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">🐾 AdoPet</a>
+        <div class="user-area">
+            <a href="index.html" class="btn-secundario">Voltar</a>
+        </div>
+    </header>
+
+    <main class="container cadastro-page">
+        <div class="cadastro-box">
+            <h2>Cadastrar Animal para Adoção</h2>
+            <p id="auth-status" class="error-message" style="display: none;"></p>
+
+            <form id="cadastro-pet-form" style="display: none;">
+                <div class="form-group">
+                    <label for="nome">Nome do Pet</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="especie">Espécie</label>
+                    <select id="especie" required>
+                        <option value="">Selecione a Espécie</option>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="idade">Idade (Ex: 1 ano, Filhote)</label>
+                    <input type="text" id="idade" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" required placeholder="Ex: São Paulo, SP">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" required rows="4" placeholder="Fale um pouco sobre o temperamento, porte e necessidades do animal."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primario full-width">
+                    Cadastrar Pet
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+    <script src="cadastro-pet.js"></script> 
+</body>
+</html>

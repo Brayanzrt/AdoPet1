@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <button id="theme-toggle" class="btn-secundario">
+    🌙 Mudar Tema
+</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopet | Encontre seu melhor amigo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">🐾 AdoPet</div>
+    <div class="user-area">
+        <a href="cadastro-pet.html" id="link-cadastro-pet" class="btn-secundario" style="display: none;">Cadastrar Animal</a>
+        
+        <a href="login.html" id="link-login" class="btn-primario">Entrar</a>
+        
+        <span id="user-info" style="display: none;"></span>
+        <button id="btn-logout" class="btn-primario" style="display: none;">Sair</button>
+    </div>
+</header>
+
+
+    <div class="hero-banner">
+        <div class="container text-center">
+            <h2>Encontre seu novo melhor amigo</h2>
+            <p>Conectando corações e patas. Navegue pelos animais disponíveis e faça a diferença na vida de um pet.</p>
+        </div>
+    </div>
+
+    <div class="filtro-container">
+        <div class="container filtros-area">
+            <div class="filtro-item">
+                <label for="buscar">Buscar</label>
+                <input type="text" id="buscar" placeholder="Nome ou descrição...">
+            </div>
+            <div class="filtro-item">
+                <label for="filtro-especie">Espécie</label>
+                <select id="filtro-especie">
+                    <option value="">Todas</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                </select>
+            </div>
+            <div class="filtro-item">
+                <label for="filtro-cidade">Cidade</label>
+                <select id="filtro-cidade">
+                    <option value="">Todas</option>
+                    </select>
+            </div>
+            <div class="filtro-item filtro-botao">
+                <button id="btn-limpar-filtros" class="btn-limpar">Limpar Filtros</button>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container">
+    <div class="animal-grid" id="lista-animais">
+        <p>Carregando animais...</p> 
+    </div>
+</main>
+    
+    <script src="app.js"></script>
+    <script src="home.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>
